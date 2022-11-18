@@ -8,8 +8,9 @@ const text = document.querySelector('p');
 
 // 1b. - okreslamy potrzebne dane
 
-let textSize = 16;
-
+let textSize = 16;  // poczatkowa wartość font-size dla p
+text.style.fontSize = textSize + "px";
+text.style.backgroundColor = "#ddd";
 
 
 
@@ -17,8 +18,16 @@ let textSize = 16;
 
 function textIncrease() {
     // console.log("klik!");
+    textSize++;
+    text.style.fontSize = textSize + "px";
+}
+
+function textDecrease() {
+    textSize--;
+    text.style.fontSize = textSize + "px";
 }
 
 //2. Ustawienie nasłuchiwania na przyciskach na kliknięcie.
 
 btnIncrease.addEventListener('click', textIncrease);
+btnDecrease.addEventListener('click', textDecrease);
